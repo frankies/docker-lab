@@ -7,20 +7,21 @@ Lab for docker testing
 ## os 的release包
 
 - ubuntu (bio)
-https://cdimage.ubuntu.com/ubuntu-base/releases/18.04/release/ubuntu-base-18.04.5-base-amd64.tar.gz
+    
+    https://cdimage.ubuntu.com/ubuntu-base/releases/18.04/release/ubuntu-base-18.04.5-base-amd64.tar.gz
 
 - debian
 
-https://github.com/debuerreotype/docker-debian-artifacts/raw/b024a792c752a5c6ccc422152ab0fd7197ae8860/jessie/rootfs.tar.xz
+    https://github.com/debuerreotype/docker-debian-artifacts/raw/b024a792c752a5c6ccc422152ab0fd7197ae8860/jessie/rootfs.tar.xz
 
 
 ## 安装软件列表
 
 - jdk 
 
-```shell
-apt-get install openjdk-8-jdk
-```
+    ```shell
+    apt-get install openjdk-8-jdk
+    ```
 
 ## 参考
 
