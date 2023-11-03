@@ -22,3 +22,6 @@ https://github.com/debuerreotype/docker-debian-artifacts/raw/b024a792c752a5c6ccc
 apt-get install openjdk-8-jdk
 ```
 
+## 参考
+
+- [https://cloud.tencent.com/developer/article/1367035](https://cloud.tencent.com/developer/article/1367035)
