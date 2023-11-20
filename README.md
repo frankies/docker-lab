@@ -21,10 +21,24 @@ UBUNTU_CODENAME=focal
 - 安装rsyslog服务
 
 ```shell
-sudo add-apt-repository ppa:adiscon/v8-devel && apt-get update && apt-get install rsyslog 
+sudo add-apt-repository ppa:adiscon/v8-devel 
+sudo apt-get update 
+sudo apt-get install rsyslog 
+
+sudo cat>/etc/rsyslog.d/99-port514.conf<<'EOF'
+$ModLoad imtcp
+$InputTCPServerRun 514
+*.* @@localhost:4560
+EOF
+
 sudo service rsyslog restart
 ```
+- 设置 vm
 
+```shell
+echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
+sysctl -p
+```
 
 ```
  curl -I https://registry-1.docker.io/v2/

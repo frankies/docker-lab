@@ -1,0 +1,52 @@
+plugins {
+  id "com.eriwen.gradle.js" version "2.14.1"
+  id "com.eriwen.gradle.css" version "2.14.0"
+}
+
+
+
+css.source {
+    dev {
+        css {
+            srcDir "app/styles"
+            include "*.css"
+            exclude "*.min.css"
+        }
+    }
+}
+
+// Specify a collection of files to be combined, then minified and finally GZip compressed.
+combineCss {
+    source = css.source.dev.css.files
+    dest = "${buildDir}/all.css"
+}
+
+minifyCss {
+    source = combineCss
+    dest = "${buildDir}/all-min.css"
+    yuicompressor { // Optional
+        lineBreakPos = -1
+    }
+}
+
+gzipCss {
+    source = minifyCss
+    dest = "${buildDir}/all.2.0.4.css"
+}
+
+
+javascript.source {
+    dev {
+        js {
+            srcDir jsSrcDir
+            include "*.js"
+            exclude "*.min.js"
+        }
+    }
+    prod {
+        js {
+            srcDir jsSrcDir
+            include "*.min.js"
+        }
+    }
+}
