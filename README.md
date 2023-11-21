@@ -43,3 +43,8 @@ sysctl -p
 ```
  curl -I https://registry-1.docker.io/v2/
 ```
+
+
+## Loki
+
+https://grafana.com/docs/loki/latest/get-started/
