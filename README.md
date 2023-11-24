@@ -48,3 +48,14 @@ sysctl -p
 ## Loki
 
 https://grafana.com/docs/loki/latest/get-started/
+
+
+---
+---
+## 2023-11-24 **gradle 插件构建docker镜像**
+
+
+
+https://zhuanlan.zhihu.com/p/112295164
+
+
