@@ -59,9 +59,10 @@ apk update && apk fetch --recursive ttf-dejavu
 ## 安装离线apk包
 
 ```shell
- touch rep.list && apk add --repositories-file=rep.list --allow-untrusted --no-network --no-cache /build/apk/apks/*.apk
+apk add --repositories-file=/dev/null --allow-untrusted --no-network --no-cache /build/apks/*.apk
 
 ```
 
 
 
+ apk add --allow-untrusted --no-network --repositories-file=/dev/null *.apk
