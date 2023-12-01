@@ -1,0 +1,13 @@
+FROM alpine as builder
+COPY ms-webapp.war /tmp/app/
+RUN  unzip /tmp/app/ms-webapp.war -d /tmp/app/ && rm -rf /tmp/app/ms-webapp.war
+ 
+FROM amazoncorretto:8
+COPY --from=builder /tmp/app /opt/earth-app/webapps/ 
+ENV UID=13000 
+ENV GID=13000 
+ENV EARTH_APPLICATION_PATH="jp.co.toyotsu.ms.ScopeApplication" 
+RUN mkdir -p /opt/earth-app/efs/
+
+RUN cd /opt/earth-app/webapps/ \
+&& chmod -R 777 /opt/earth-app/

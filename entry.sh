@@ -1,3 +1,1 @@
-#!/bin/bash
-
-docker-compose exec -it {} sh
+ docker run -it --rm --name test -v /workspaces/docker-lab/java/app/build:/build amazoncorretto:8u372-alpine3.17  sh
